@@ -48,7 +48,7 @@ class Aoe_Profiler_Model_Run extends Mage_Core_Model_Abstract
     public function populateMetadata()
     {
         $this->setUrl(Mage::app()->getRequest()->getRequestUri());
-        $this->setRoute(Mage::app()->getFrontController()->getAction()->getFullActionName());
+        $this->setRoute(Mage::app()->getFrontController()?->getAction()->getFullActionName());
         $this->setSessionId(Mage::getSingleton('core/session')->getSessionId());
 
         $totals = Varien_Profiler::getTotals();
