@@ -49,14 +49,14 @@
         </resources>
 
         <events>
-            <controller_front_send_response_after>
+            <core_app_run_after>
                 <observers>
                     <persistent>
                         <class>aoe_profiler/observer</class>
                         <method>persistProfile</method>
                     </persistent>
                 </observers>
-            </controller_front_send_response_after>
+            </core_app_run_after>
         </events>
 
 
