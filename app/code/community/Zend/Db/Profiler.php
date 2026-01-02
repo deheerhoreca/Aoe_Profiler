@@ -326,8 +326,8 @@ class Zend_Db_Profiler
         // End the query profile so that the elapsed time can be calculated.
         $qp->end();
 
-		// Varien_Profiler::addData($qp->getQueryParams(), 'queryparams');
-		// Varien_Profiler::addData($qp->getQueryType(), 'querytype');
+		Varien_Profiler::addData($qp->getQueryParams(), 'queryparams');
+		Varien_Profiler::addData($qp->getQueryType(), 'querytype');
 		Varien_Profiler::stop($qp->getQuery());
 
         /**
