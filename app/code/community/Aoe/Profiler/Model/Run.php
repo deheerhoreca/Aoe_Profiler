@@ -185,10 +185,11 @@ class Aoe_Profiler_Model_Run extends Mage_Core_Model_Abstract
         $result = parent::_afterLoad();
         $this->stackLog = unserialize($this->getStackData());
         if ($this->stackLog === false) {
-            Mage::throwException('Error while unserializing data');
+            Mage::log('Error while unserializing profiler data');
         }
         return $result;
     }
 
 
 }
+
