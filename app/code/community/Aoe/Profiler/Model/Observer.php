@@ -18,7 +18,7 @@ class Aoe_Profiler_Model_Observer
     /**
      * Persist profile
      *
-     * This method is called from the controller_front_send_response_after event
+     * This method is called from the core_app_run_after event
      *
      * @author Fabrizio Branca
      * @since 2014-02-01
@@ -31,7 +31,8 @@ class Aoe_Profiler_Model_Observer
             return;
         }
         if (Varien_Profiler::isEnabled() && Varien_Profiler::checkThresholds()) {
-            $run = Mage::getModel('aoe_profiler/run'); /* @var $run Aoe_Profiler_Model_Run */
+            /** @var Aoe_Profiler_Model_Run $run */
+            $run = Mage::getModel('aoe_profiler/run');
             $run->loadStackLogFromProfiler();
             $run->populateMetadata();
             try {
